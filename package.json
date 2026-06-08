@@ -2,7 +2,7 @@
   "name": "splitt",
   "private": true,
   "version": "0.1.0",
-  "description": "A better way to share autos out of campus.",
+  "description": "Splitt - a ride-sharing web app for IIIT Jabalpur students",
   "workspaces": [
     "frontend",
     "backend"

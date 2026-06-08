@@ -2,6 +2,7 @@
   "name": "@splitt/frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "Splitt frontend",
   "type": "module",
   "scripts": {
     "dev": "vite",
