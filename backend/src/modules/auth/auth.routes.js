@@ -5,8 +5,7 @@ const { requireAuth } = require('../../middleware/auth');
 const router = express.Router();
 
 router.get('/me', requireAuth, (req, res) => {
-  const { id, email, name, picture, phone, thumbsUp, thumbsDown } = req.user;
-  res.json({ id, email, name, picture, phone, thumbsUp, thumbsDown });
+  res.json(req.user);
 });
 
 router.post('/logout', (_req, res) => {
