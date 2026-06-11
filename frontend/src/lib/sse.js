@@ -1,7 +1,5 @@
-const BASE = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-
 export function openEventStream(handlers) {
-  const url = `${BASE}/api/v1/events`;
+  const url = `/api/v1/events`;
   const source = new EventSource(url, { withCredentials: true });
 
   for (const [event, handler] of Object.entries(handlers)) {
