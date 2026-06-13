@@ -4,7 +4,18 @@ async function attachUser(req, _res, next) {
   const userId = req.cookies?.splitt_session;
   if (!userId) return next();
 
-  const user = await prisma.user.findUnique({ where: { id: userId } });
+  const user = await prisma.user.findUnique({
+    where: { id: userId },
+    select: {
+      id: true,
+      email: true,
+      name: true,
+      picture: true,
+      phone: true,
+      thumbsUp: true,
+      thumbsDown: true,
+    },
+  });
   if (user) req.user = user;
   next();
 }
