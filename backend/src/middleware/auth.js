@@ -1,7 +1,7 @@
 const { prisma } = require('../lib/prisma');
 
 async function attachUser(req, _res, next) {
-  const userId = req.cookies?.splitt_session;
+  const userId = req.signedCookies?.splitt_session;
   if (!userId) return next();
 
   const user = await prisma.user.findUnique({ where: { id: userId } });

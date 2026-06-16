@@ -24,7 +24,7 @@ function createApp() {
     }),
   );
   app.use(express.json());
-  app.use(cookieParser());
+  app.use(cookieParser(process.env.SESSION_SECRET));
   app.use(attachUser);
 
   app.get('/health', async (_req, res) => {
