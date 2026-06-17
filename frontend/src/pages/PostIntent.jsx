@@ -33,6 +33,8 @@ export default function PostIntent() {
   const [maxFare, setMaxFare] = useState('');
   const [error, setError] = useState('');
 
+  if (authLoading) return <div className="p-8 text-gray-500">Loading...</div>;
+
   const minDatetime = (() => {
     const d = new Date();
     d.setMinutes(d.getMinutes() + 5 - (d.getMinutes() % 5));
